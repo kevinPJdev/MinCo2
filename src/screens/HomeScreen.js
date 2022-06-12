@@ -3,21 +3,13 @@ import { StatusBar } from 'expo-status-bar';
 //import { createNativeStackNavigator } from '@react-navigation/stack';
 import { StyleSheet, Text, View } from 'react-native';
 
-import BottomTabNavigation from './src/navigation/BottomTabNavigation';
-import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from './src/screens/HomeScreen';
-import BudgetScreen from './src/screens/BudgetScreen';
-
-export default function App() {
-
+function HomeScreen() {
   return (
-    <NavigationContainer>
-      <View style={styles.container}>
-        <View>
-          <BudgetScreen/>
-        </View>
+    <View style={styles.container}>
+      <View >
+        <Text>Home Screen</Text>
       </View>
-    </NavigationContainer>
+    </View>
   );
 }
 
@@ -29,3 +21,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default HomeScreen;
