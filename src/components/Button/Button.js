@@ -8,7 +8,7 @@ const Button = ({onPress, title}) => {
       onPress={onPress} 
       style={styles.appButtonContainer}>
       <Text style={styles.appButtonText}>{title}</Text>
-    </TouchableOpacity>
+    </TouchableOpacity> 
   )
 }
 
