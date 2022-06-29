@@ -4,14 +4,41 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Colors } from '../style/colors'
-import HomeScreen from "../screens/HomeScreen";
-import AddEmissionsScreen from "../screens/AddEmissionsScreen";
+import TabBarIcons from "../components/TabBarIcons/TabBarIcons";
 import EmissionListScreen from "../screens/EmissionListScreen";
-import BudgetScreen from "../screens/BudgetScreen";
+import BudgetNavigator from "./BottomTab/BudgetNavigator";
+import AddEmissionsNavigator from "./BottomTab/AddEmissionsNavigator";
 import LearnScreen from "../screens/LearnScreen";
 import ChatScreen from "../screens/ChatScreen";
 
+
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+const Tab = createMaterialBottomTabNavigator();
+
 const BottomTab = createBottomTabNavigator();
+
+const BudgetOptions = {
+  tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"md-calculator"} />,
+  headerShown: false
+};
+
+const EmissionsOptions = {
+  tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"md-stats-chart-sharp"} />,
+};
+
+const AddEmissionOptions = {
+  tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"md-add-circle"} />,
+  headerShown: false
+};
+
+const LearnOptions = {
+  tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"md-reader"} />,
+};
+
+const ChatOptions = {
+  tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"chatbubbles-sharp"} />,
+};
 
 export default function BottomTabNavigation() {
   return(
@@ -27,16 +54,35 @@ export default function BottomTabNavigation() {
           elevation:0,
           borderRadius:15,
           height: 90,
-          backgroundColor: '#ffffff',
-          //paddingBottom: bottom / 2 + 6,
+          backgroundColor: '#B2A2E8',
         },
       }}
       >
-      <BottomTab.Screen name="Carbon Budget" component={BudgetScreen}/>
-      <BottomTab.Screen name="Emissions" component={EmissionListScreen} />
-      <BottomTab.Screen name="Add Emissions" component={AddEmissionsScreen} />
-      <BottomTab.Screen name="Learn" component={LearnScreen} />
-      <BottomTab.Screen name="Chat" component={ChatScreen} />
+      <BottomTab.Screen 
+        name="Carbon Budget" 
+        component={BudgetNavigator} 
+        options={BudgetOptions}
+      />
+      <BottomTab.Screen 
+        name="Emissions" 
+        component={EmissionListScreen} 
+        options={EmissionsOptions}  
+      />
+      <BottomTab.Screen 
+        name="Add Emissions" 
+        component={AddEmissionsNavigator}
+        options={AddEmissionOptions} 
+      />
+      <BottomTab.Screen 
+        name="Learn" 
+        component={LearnScreen}
+        options={LearnOptions} 
+      />
+      <BottomTab.Screen 
+        name="Chat" 
+        component={ChatScreen}
+        options={ChatOptions} 
+      />
     </BottomTab.Navigator>
   )
 }

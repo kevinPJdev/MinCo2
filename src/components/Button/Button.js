@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 
+import {AppModal} from '../Modal/AppModal';
+
 const Button = ({onPress, title}) => {
   return (
     <TouchableOpacity 
@@ -17,7 +19,7 @@ export default Button
 const styles = StyleSheet.create({
   appButtonContainer: {
     elevation: 8,
-    backgroundColor: "#009688",
+    backgroundColor: "#5D46B0",
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12

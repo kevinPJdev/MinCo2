@@ -1,45 +1,44 @@
 import { Dimensions } from "react-native";
 import { StyleSheet, Text, View } from 'react-native';
-import {ProgressChart} from 'react-native-chart-kit';
+import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import ProgressCircle from 'react-native-progress-circle'
+
 
 import Button from '../components/Button/Button';
+import {AppModal} from "../components/Modal/AppModal";
+
 
 function BudgetScreen() {
-  const screenWidth = Dimensions.get("window").width;
-
-  const chartConfig = {
-    
-    color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
-    strokeWidth: 2, // optional, default 3
-    barPercentage: 0.5,
-    useShadowColorFromDataset: false // optional
-  };
-
-  const data = {
-    labels: ["Monthly goal"], // optional
-    data: [1]
-  };
+  const [modalVisible, setModalVisible] = useState(false);
+ 
+  const nav = useNavigation();
 
   return (
     <View style={styles.container}>
-      <View>
-        <View>
-          <Text>Carbon Budget</Text>
+      <View style={styles.progressContainer}>
+        <View style={styles.progressCircle}>
+          <ProgressCircle
+                percent={30}
+                radius={100}
+                borderWidth={15}
+                color="#392C66"
+                shadowColor="#B1A2E8"
+                bgColor="#042241"
+            >
+                <Text style={{ fontSize: 18, color: '#fff' }}>{'Remaining:'}</Text>
+            </ProgressCircle>
         </View>
-        <ProgressChart
-            data={data}
-            width={screenWidth}
-            height={220}
-            strokeWidth={16}
-            radius={32}
-            chartConfig={chartConfig}
-            hideLegend={false}
-        />
+          <Text style={styles.textStyle}>Monthly Budget: </Text>
+          <Text style={styles.textStyle}>Carbon Emitted: </Text>
+      </View>
+      <View style={styles.widgetContainer}>
         <View>
-          <Button onPress={()=> {console.log("Pressed")}} title={"Set Monthly Budget"}/>
+            <Button onPress ={()=> {setModalVisible(!modalVisible); console.log(modalVisible)}} title={"Set Monthly Budget"} />
+            <AppModal modalVisible={modalVisible} title="Set your monthly Budget" setModalVisible={setModalVisible}/>
         </View>
         <View>
-          <Button onPress={()=> {console.log("Pressed")}} title={"Take a Quiz"}/>
+            <Button onPress={()=> nav.navigate("Quiz")} title={"Take a Quiz"}/>
         </View>
       </View>
     </View>
@@ -49,8 +48,30 @@ function BudgetScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#042241',
+    backgroundColor: '#392C66',
+    padding: 5
   },
+  progressContainer: {
+    flex:0.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    borderColor: '#B1A2E8',
+    borderWidth: 2,
+    borderRadius: 10
+  },
+  progressCircle: {
+    marginVertical: 10
+  },
+  textStyle: {
+    fontSize: 18,
+    color: '#fff'
+  },
+  widgetContainer: {
+  flex: 0.5,
+  paddingVertical:10,
+  paddingHorizontal: 10
+  }
 });
 
 export default BudgetScreen;

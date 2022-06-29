@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent:"space-between",
     borderColor: "#6fdb24",
-    width:Layout.screen.width-20,
     borderWidth:3,
     backgroundColor: 'rgba(12, 243, 189, 0.2)',
     borderRadius: 10,
@@ -38,14 +37,9 @@ const styles = StyleSheet.create({
     paddingHorizontal:10,
     marginBottom:10,
   },
-  iconContainer: {
-    marginLeft: Layout.PADDING_HORIZONTAL / 2,
-    marginRight: Layout.PADDING_HORIZONTAL / 2,
-  },
   appButtonText: {
     fontSize: 20,
     color: "#0d0d15",
     fontWeight: "bold",
-    alignSelf: "left",
   }
 })
