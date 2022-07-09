@@ -3,6 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import  AddEmissionsScreen  from "../../screens/AddEmissionsScreen";
 import SubCategorySelection from "../../screens/SubCategorySelection";
+import CreateEmissionScreen from "../../screens/CreateEmissionScreen";
+import EmissionListScreen from '../../screens/EmissionListScreen';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,14 @@ const AddEmissionsNavigator = () => {
       <Stack.Screen 
         name="Select Sub Category" 
         component={SubCategorySelection}
+      />
+      <Stack.Screen 
+        name="Create Emissions" 
+        component={CreateEmissionScreen}
+      />
+      <Stack.Screen 
+        name="Emissions"
+        component={EmissionListScreen}
       />
     </Stack.Navigator>
   )

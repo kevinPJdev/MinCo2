@@ -1,9 +1,7 @@
-import { Dimensions } from "react-native";
 import { StyleSheet, Text, View } from 'react-native';
 import { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import ProgressCircle from 'react-native-progress-circle'
-
+import { useSelector, useDispatch } from 'react-redux';
 
 import Button from '../components/Button/Button';
 import {AppModal} from "../components/Modal/AppModal";
@@ -11,30 +9,26 @@ import {AppModal} from "../components/Modal/AppModal";
 
 function BudgetScreen() {
   const [modalVisible, setModalVisible] = useState(false);
- 
   const nav = useNavigation();
+  const dispatch = useDispatch();
+
+  const monthlyCarbonBudget = useSelector(state => state.budget.monthlyCarbonBudget);
+
+  console.log(monthlyCarbonBudget);
+  console.log("Budget executes")
 
   return (
     <View style={styles.container}>
       <View style={styles.progressContainer}>
         <View style={styles.progressCircle}>
-          <ProgressCircle
-                percent={30}
-                radius={100}
-                borderWidth={15}
-                color="#392C66"
-                shadowColor="#B1A2E8"
-                bgColor="#042241"
-            >
-                <Text style={{ fontSize: 18, color: '#fff' }}>{'Remaining:'}</Text>
-            </ProgressCircle>
+        
         </View>
-          <Text style={styles.textStyle}>Monthly Budget: </Text>
+          <Text style={styles.textStyle}>Monthly Budget: {monthlyCarbonBudget}</Text>
           <Text style={styles.textStyle}>Carbon Emitted: </Text>
       </View>
       <View style={styles.widgetContainer}>
         <View>
-            <Button onPress ={()=> {setModalVisible(!modalVisible); console.log(modalVisible)}} title={"Set Monthly Budget"} />
+            <Button onPress ={()=> {setModalVisible(!modalVisible);}} title={"Set Monthly Budget"} />
             <AppModal modalVisible={modalVisible} title="Set your monthly Budget" setModalVisible={setModalVisible}/>
         </View>
         <View>
@@ -44,6 +38,7 @@ function BudgetScreen() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {

@@ -3,6 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import ListItem from '../components/ListItem/ListItem';
 
+
 function AddEmissionsScreen() {
   
   const navigation = useNavigation();
@@ -19,7 +20,13 @@ function AddEmissionsScreen() {
             })} 
             iconName="md-car"
           />
-          <ListItem title="Fashion" onPress={()=> {console.log("Transport Pressed")}} iconName="shirt"/>
+          <ListItem 
+            title="Fashion" 
+            onPress={()=> navigation.navigate('Select Sub Category', {
+              emissionType: 'fashionType'
+            })}  
+            iconName="shirt"
+          />
           <ListItem title="Streaming" onPress={()=> {console.log("Transport Pressed")}} iconName="tv-sharp"/>
           <ListItem title="Electricity" onPress={()=> {console.log("Transport Pressed")}} iconName="thunderstorm"/>
         </ScrollView>

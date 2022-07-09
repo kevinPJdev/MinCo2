@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
 import Slider from '@react-native-community/slider';
+import {useDispatch} from 'react-redux';
+import { actions } from '../../ducks/budget/budgetSlice.js'
+
 
 
 const AppModal = ({title, modalVisible, setModalVisible, ...props}) => {
   const [sliderValue, setSliderValue] = useState(0);
+  const dispatch = useDispatch();
   return (
     <View style={styles.centeredView}>
       <Modal
@@ -44,7 +48,7 @@ const AppModal = ({title, modalVisible, setModalVisible, ...props}) => {
             <Text>167 kg CO2eq</Text>            
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => {setModalVisible(!modalVisible)}}
+              onPress={() => {setModalVisible(!modalVisible); dispatch(actions.setMonthlyCarbonBudget(sliderValue))}}
             >
               <Text style={styles.textStyle}>Save My Budget</Text>
             </Pressable>

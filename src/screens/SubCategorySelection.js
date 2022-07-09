@@ -2,16 +2,16 @@ import { StyleSheet, Text, View , ScrollView} from 'react-native'
 import React from 'react'
 import { useNavigation, useRoute } from "@react-navigation/native";
 
-import { TransportType } from '../data/TransportEmissionConstants'
 import ListItem from '../components/ListItem/ListItem';
+import {transportType, fashionType} from '../data/TransportEmissionConstants'
 
 
 const getSubCategory = (emissionType) => {
   switch(emissionType) {
     case 'transportType':
-      return TransportType
+      return transportType
     case 'fashionType':
-      return TransportType
+      return fashionType
     default:
       return null;
   }
@@ -20,14 +20,21 @@ const getSubCategory = (emissionType) => {
 
 const SubCategorySelection = ({route, navigation}) => {
   const {emissionType} = route.params;
-  const subCategories = getSubCategory("transportType");
-  //console.log(subCategories);
+  const subCategories = getSubCategory(emissionType);
+  console.log(subCategories);
 
   return (
     <View style={styles.container}>
       <ScrollView >    
         {subCategories.map((subCategory) => (
-          <ListItem key={subCategory.id} title={subCategory.name} onPress={() => {console.log("Button Pressed")}} iconName={subCategory.icon} />
+          <ListItem 
+            key={subCategory.id} 
+            title={subCategory.name} 
+            onPress={()=> navigation.navigate('Create Emissions', {
+              emissionType: emissionType,
+              emissionModelType: subCategory.value
+            })}  
+            iconName={subCategory.icon} />
         ))}
         
       </ScrollView>

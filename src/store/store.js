@@ -1,21 +1,13 @@
-const initialState = {
-  allEmissionConstants: [],
-  monthlyCarbonBudget: 100,
-  monthlyTransportCost: 0
-};
+import { configureStore } from "@reduxjs/toolkit";
 
-const setMonthlyCarbonBudget = () => {
-  return {
-    type: 'monthlyCarbonBudget/setMonthlyCarbonBudget',
-    payload: 100
+import { budget } from '../ducks/budget/budgetSlice';
+import { emissions } from '../ducks/emissions/emissionsSlice';
+
+const store = configureStore({
+  reducer: {
+    budget: budget.reducer,
+    emissions: emissions.reducer,
   }
-}
+})
 
-const addTransportCost = (cost) => {
-  return {
-    type: 'monthlyTransportCost/addTransportCost',
-    payload: cost
-  }
-}
-
-
+export default store;

@@ -1,18 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { Provider } from 'react-redux';
 
 import BottomTabNavigation from './src/navigation/BottomTabNavigation';
 import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from './src/screens/HomeScreen';
-import BudgetScreen from './src/screens/BudgetScreen';
-import AddEmissionsScreen from './src/screens/AddEmissionsScreen';
+import store from './src/store/store';
 
 export default function App() {
 
   return (
-    <NavigationContainer>
-      <BottomTabNavigation />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <BottomTabNavigation />
+      </NavigationContainer>
+    </Provider>
   );
 }
 
