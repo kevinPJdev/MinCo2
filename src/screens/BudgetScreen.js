@@ -14,8 +14,8 @@ function BudgetScreen() {
 
   const monthlyCarbonBudget = useSelector(state => state.budget.monthlyCarbonBudget);
 
-  console.log(monthlyCarbonBudget);
-  console.log("Budget executes")
+  // console.log(monthlyCarbonBudget);
+  // console.log("Budget executes")
 
   return (
     <View style={styles.container}>

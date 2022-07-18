@@ -25,8 +25,10 @@ const Transport = ({ defaultValueSlider, setDistance, setDurationMinutes, emissi
       
     return (
       <View >
-        <Text>Distance</Text>
-        <Text>{Math.round(sliderValue) + " kilometer(s)"}</Text>
+        <Text style={styles.textPrimary}>Distance</Text>
+        <Text style={styles.textSecondary}>{Math.round(sliderValue)} 
+          <Text> kilometer(s)</Text>
+        </Text>
       </View>
     )
   }
@@ -49,10 +51,10 @@ const Transport = ({ defaultValueSlider, setDistance, setDurationMinutes, emissi
         onSlidingComplete={onSliderValueChange}
       />
       <View>
-        <Text style={styles.miniHeader}>Total</Text>
-        <Text>
-        <Text>{ emissionModelType === TransportType.plane ? Math.round(sliderValue * 1000 ) : Math.round(sliderValue * 1000 * transport[emissionModelType])}</Text>
-          <Text>kgCO2eq</Text>
+        <Text style={styles.textPrimary}>Total</Text>
+        <Text style={styles.textSecondary}>
+        <Text style={styles.numberHighlight}>{ emissionModelType === TransportType.plane ? Math.round(sliderValue * 1000 ) : Math.round(sliderValue * 1000 * transport[emissionModelType])}</Text>
+          <Text> kgCO2eq</Text>
         </Text>
       </View>
     </View>
@@ -64,6 +66,21 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  textContainer: {
+    paddingVertical: 12
+  },
+  textPrimary: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  textSecondary: {
+    fontSize:15,
+  },
+  numberHighlight: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'green'
   }
 })
 

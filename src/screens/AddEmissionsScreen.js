@@ -12,7 +12,13 @@ function AddEmissionsScreen() {
     <View style={styles.container}>
       <View style={{flex:1, flexDirection:"column", justifyContent:"space-between"}}>
       <ScrollView>
-          <ListItem title="Food" onPress={()=> {console.log("Food Pressed")}} iconName="fast-food" />
+          <ListItem 
+            title="Food" 
+            onPress={()=> navigation.navigate('Select Sub Category', {
+              emissionType: "foodType"
+            })} 
+            iconName="fast-food" 
+          />
           <ListItem 
             title="Transport" 
             onPress={()=> navigation.navigate('Select Sub Category', {
@@ -27,8 +33,20 @@ function AddEmissionsScreen() {
             })}  
             iconName="shirt"
           />
-          <ListItem title="Streaming" onPress={()=> {console.log("Transport Pressed")}} iconName="tv-sharp"/>
-          <ListItem title="Electricity" onPress={()=> {console.log("Transport Pressed")}} iconName="thunderstorm"/>
+          <ListItem 
+            title="Streaming" 
+            onPress={()=> navigation.navigate('Select Sub Category', {
+              emissionType: 'streamingType'
+            })} 
+            iconName="tv-sharp"
+          />
+          <ListItem 
+            title="Electricity" 
+            onPress={()=> navigation.navigate('Select Sub Category', {
+              emissionType: 'electricityType'
+            })} 
+            iconName="thunderstorm"
+          />
         </ScrollView>
       </View>
     </View>

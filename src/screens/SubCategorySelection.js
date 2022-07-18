@@ -3,7 +3,7 @@ import React from 'react'
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 import ListItem from '../components/ListItem/ListItem';
-import {transportType, fashionType} from '../data/TransportEmissionConstants'
+import {transportType, fashionType, foodType, streamingType, electricityType} from '../data/TransportEmissionConstants'
 
 
 const getSubCategory = (emissionType) => {
@@ -12,6 +12,12 @@ const getSubCategory = (emissionType) => {
       return transportType
     case 'fashionType':
       return fashionType
+    case 'foodType':
+      return foodType
+    case 'streamingType':
+      return streamingType
+    case 'electricityType':
+      return electricityType
     default:
       return null;
   }
@@ -21,7 +27,7 @@ const getSubCategory = (emissionType) => {
 const SubCategorySelection = ({route, navigation}) => {
   const {emissionType} = route.params;
   const subCategories = getSubCategory(emissionType);
-  console.log(subCategories);
+  //console.log(subCategories);
 
   return (
     <View style={styles.container}>

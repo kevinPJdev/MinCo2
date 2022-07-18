@@ -1,8 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
 
+const initialState= [];
+
 export const emissions = createSlice({
   name: 'emissions',
-  initialState: [],
+  initialState,
   reducers: {
     createEmission(state, action) {
       state.push(action.payload)

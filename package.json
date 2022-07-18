@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
+    "@react-native-community/datetimepicker": "^6.2.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-community/slider": "^4.2.3",
     "@react-navigation/bottom-tabs": "^6.3.1",
@@ -27,6 +28,8 @@
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
     "react-native-gesture-handler": "~2.2.1",
+    "react-native-globalize": "^4.5.1",
+    "react-native-modal-datetime-picker": "^13.1.2",
     "react-native-paper": "^4.12.1",
     "react-native-progress-circle": "^2.1.0",
     "react-native-reanimated": "^2.8.0",
@@ -37,7 +40,8 @@
     "react-native-web": "0.17.7",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "expo-barcode-scanner": "~11.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

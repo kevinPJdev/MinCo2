@@ -13,6 +13,7 @@ import ChatScreen from "../screens/ChatScreen";
 
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import BarCodeScanScreen from "../screens/BarCodeScanScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -79,8 +80,8 @@ export default function BottomTabNavigation() {
         options={LearnOptions} 
       />
       <BottomTab.Screen 
-        name="Chat" 
-        component={ChatScreen}
+        name="Scan" 
+        component={BarCodeScanScreen}
         options={ChatOptions} 
       />
     </BottomTab.Navigator>
