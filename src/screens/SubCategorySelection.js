@@ -3,7 +3,8 @@ import React from 'react'
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 import ListItem from '../components/ListItem/ListItem';
-import {transportType, fashionType, foodType, streamingType, electricityType} from '../data/TransportEmissionConstants'
+import {transportType, fashionType, foodType, streamingType, purchaseType} from '../data/TransportEmissionConstants'
+import { Colors } from '../style/colors';
 
 
 const getSubCategory = (emissionType) => {
@@ -16,8 +17,8 @@ const getSubCategory = (emissionType) => {
       return foodType
     case 'streamingType':
       return streamingType
-    case 'electricityType':
-      return electricityType
+    case 'purchaseType':
+      return purchaseType
     default:
       return null;
   }
@@ -25,20 +26,21 @@ const getSubCategory = (emissionType) => {
 
 
 const SubCategorySelection = ({route, navigation}) => {
-  const {emissionType} = route.params;
+  const {emissionType, iconName} = route.params;
   const subCategories = getSubCategory(emissionType);
   //console.log(subCategories);
 
   return (
     <View style={styles.container}>
-      <ScrollView >    
+      <ScrollView style={styles.scrollContainer}>    
         {subCategories.map((subCategory) => (
           <ListItem 
             key={subCategory.id} 
             title={subCategory.name} 
             onPress={()=> navigation.navigate('Create Emissions', {
               emissionType: emissionType,
-              emissionModelType: subCategory.value
+              emissionModelType: subCategory.value,
+              iconName: iconName
             })}  
             iconName={subCategory.icon} />
         ))}
@@ -55,9 +57,9 @@ const styles = StyleSheet.create({
   container: {
     flex:1,
     borderColor:"#000",
-    backgroundColor: '#fff',
+    backgroundColor: Colors.green20,
     flexDirection:"column",
-    marginVertical: 20
+    paddingVertical: 20
 
   },
   headerContainer: {
@@ -66,5 +68,8 @@ const styles = StyleSheet.create({
     borderBottomWidth:3,
     marginVertical:10,
     borderRadius:5
+  },
+  scrollContainer: {
+    padding: 10
   }
 });

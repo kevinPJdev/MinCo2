@@ -2,23 +2,23 @@ import { View, Text, StyleSheet } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Slider from "@react-native-community/slider";
 
-import { fashion } from 'carbon-footprint';
+import { purchase } from 'carbon-footprint';
 
 const MIN_SLIDER_VALUE = 1;
 const MAX_SLIDER_VALUE = 10;
 
-const Fashion = ({ emissionModelType, defaultValueSlider, setQuantity, setCo2Emission }) => {
+const Purchase = ({ emissionModelType, defaultValueSlider, setQuantity, setCo2Emission }) => {
   const [sliderValue, setSliderValue] = useState(defaultValueSlider);
 
   const onSliderValueChange = (value) => {
     const val = Math.round(value);
     setSliderValue(val);
     setQuantity(val);
-    setCo2Emission(Math.round(val * fashion[emissionModelType]));
+    setCo2Emission(Math.round(sliderValue*purchase[emissionModelType]));
   };
 
   useEffect(()=> {
-    setCo2Emission(Math.round(sliderValue * fashion[emissionModelType]));
+    setCo2Emission(Math.round(sliderValue*purchase[emissionModelType]));
   },[]);
 
   const renderTotal = () => {
@@ -50,7 +50,7 @@ const Fashion = ({ emissionModelType, defaultValueSlider, setQuantity, setCo2Emi
     
       <View>
       <Text style={styles.textSecondary}>
-        <Text style={styles.numberHighlight}>{Math.round(sliderValue * fashion[emissionModelType])}</Text>
+        <Text style={styles.numberHighlight}>{Math.round(sliderValue * purchase[emissionModelType])}</Text>
           <Text> kgCO2eq</Text>
         </Text>
       </View>
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Fashion
+export default Purchase

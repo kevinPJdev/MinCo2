@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import ListItem from '../components/ListItem/ListItem';
+import { Colors } from '../style/colors';
 
 
 function AddEmissionsScreen() {
@@ -11,41 +12,41 @@ function AddEmissionsScreen() {
   return (
     <View style={styles.container}>
       <View style={{flex:1, flexDirection:"column", justifyContent:"space-between"}}>
-      <ScrollView>
+      <ScrollView style={styles.scrollContainer}>
           <ListItem 
             title="Food" 
             onPress={()=> navigation.navigate('Select Sub Category', {
-              emissionType: "foodType"
+              emissionType: "foodType",iconName:"fast-food"
             })} 
             iconName="fast-food" 
           />
           <ListItem 
             title="Transport" 
             onPress={()=> navigation.navigate('Select Sub Category', {
-              emissionType: 'transportType'
+              emissionType: 'transportType', iconName:"md-car"
             })} 
             iconName="md-car"
           />
           <ListItem 
             title="Fashion" 
             onPress={()=> navigation.navigate('Select Sub Category', {
-              emissionType: 'fashionType'
+              emissionType: 'fashionType', iconName:"shirt"
             })}  
             iconName="shirt"
           />
           <ListItem 
             title="Streaming" 
             onPress={()=> navigation.navigate('Select Sub Category', {
-              emissionType: 'streamingType'
+              emissionType: 'streamingType', iconName:"tv-sharp"
             })} 
             iconName="tv-sharp"
           />
           <ListItem 
-            title="Electricity" 
+            title="Purchase" 
             onPress={()=> navigation.navigate('Select Sub Category', {
-              emissionType: 'electricityType'
+              emissionType: 'purchaseType', iconName:"cash"
             })} 
-            iconName="thunderstorm"
+            iconName="cash"
           />
         </ScrollView>
       </View>
@@ -57,18 +58,20 @@ function AddEmissionsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    borderColor:"#000",
-    backgroundColor: '#fff',
+    backgroundColor: Colors.green20,
     flexDirection:"column",
-    marginVertical: 20
+    paddingTop: 20
 
   },
   headerContainer: {
-    backgroundColor: '#b5d692',
+    backgroundColor: '#000',
     borderBottomColor:"#000",
     borderBottomWidth:3,
     marginVertical:10,
     borderRadius:5
+  },
+  scrollContainer: {
+    padding: 10,
   }
 });
 

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import Slider from "@react-native-community/slider";
 import { transport, TransportType } from 'carbon-footprint';
+import { useEffect } from "react";
 
 
 const MIN_SLIDER_VALUE = 2;
@@ -10,16 +11,18 @@ const MAX_SLIDER_VALUE = 1000;
 const MIN_SLIDER_VALUE_PLANE = 20;
 const MAX_SLIDER_VALUE_PLANE = 1000;
 
-const Transport = ({ defaultValueSlider, setDistance, setDurationMinutes, emissionModelType }) => {
+const Transport = ({ defaultValueSlider, setDistance, setDurationMinutes, emissionModelType, setCo2Emission }) => {
   const [sliderValue, setSliderValue] = useState(defaultValueSlider / 1000);
 
   const onSliderValueChange = (value) => {
     const val = Math.round(value);
     setSliderValue(val);
-    /* since we use meter as reference (and not kilometers), we need to multiply by 1000 */
-    setDistance(val * 1000);
-    setDurationMinutes(val);
+    setCo2Emission(Math.round(val * 1000 * transport[emissionModelType]));
   };
+
+  useEffect(()=> {
+    setCo2Emission(Math.round(sliderValue * 1000 * transport[emissionModelType]));
+  },[]);
 
   const renderDistance = () => {
       

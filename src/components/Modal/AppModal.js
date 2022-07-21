@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
 import Slider from '@react-native-community/slider';
 import {useDispatch} from 'react-redux';
-import { actions } from '../../ducks/budget/budgetSlice.js'
+import { budgetActions } from '../../ducks/budget/budgetSlice.js'
+import Colors from "../../style/colors/Colors.js";
 
 
 
@@ -29,11 +30,11 @@ const AppModal = ({title, modalVisible, setModalVisible, ...props}) => {
               maximumValue={2000}
               minimumTrackTintColor="#3AFC1E"
               maximumTrackTintColor="#DFDFDE"
-              step={50}
+              step={25}
               value={sliderValue}
               onValueChange={value=>setSliderValue(value)} 
             />
-            <Text>{sliderValue} kg CO2eq</Text>
+            <Text style={styles.textPrimary}>{sliderValue} kg CO2eq</Text>
             <Text>Average monthly emissions per capita in a sample of countries</Text>
             <Text>Luxembourg : 3.5 tons</Text>
             <Text>United States : 1.5 tons</Text>
@@ -44,14 +45,16 @@ const AppModal = ({title, modalVisible, setModalVisible, ...props}) => {
             <Text>Brazil : 208 kg</Text>
             <Text>India : 139 kg</Text>
             <Text>Ethiopia : 8.3 kg</Text>
-            <Text>If you wish to respect the Paris agreement to keep the rise in global temperature below 2 degrees, set your monthly budget at</Text>
-            <Text>167 kg CO2eq</Text>            
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => {setModalVisible(!modalVisible); dispatch(actions.setMonthlyCarbonBudget(sliderValue))}}
-            >
-              <Text style={styles.textStyle}>Save My Budget</Text>
-            </Pressable>
+            <Text>If you wish to respect the <Text style={styles.textPrimary}>Paris agreement</Text> to keep the rise in global temperature below 2 degrees, set your monthly budget at</Text>
+            <Text style={styles.textPrimary}>167 kgCO2eq</Text>
+            <View style={styles.buttonContainer}>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => {setModalVisible(!modalVisible); dispatch(budgetActions.setMonthlyCarbonBudget(sliderValue))}}
+              >
+                <Text style={styles.textStyle}>Save My Budget</Text>
+              </Pressable>
+            </View>          
           </View>
         </View>
       </Modal>
@@ -84,15 +87,16 @@ const styles = StyleSheet.create({
     height: '80%'
   },
   button: {
+    backgroundColor: Colors.green40,
     borderRadius: 20,
     padding: 10,
-    elevation: 2
+    elevation: 2,
   },
   buttonOpen: {
     backgroundColor: "#F194FF",
   },
   buttonClose: {
-    backgroundColor: "#2196F3",
+    backgroundColor: Colors.green30,
   },
   textStyle: {
     color: "white",
@@ -107,6 +111,15 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: 'center',
     fontSize:30
+  },
+  buttonContainer: {
+    marginTop: 15
+  },
+  textPrimary: {
+    color: Colors.green30,
+    fontSize: 15,
+    fontWeight: '500'
+    
   }
 });
 

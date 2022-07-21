@@ -41,14 +41,18 @@ const streamingType = [
   {id:4, name: 'Video - Ultra HD/4K', value:"ultraHDVideo", icon: "tv"},
 ]
 
-const electricityType = [
-  {id:1, name: 'Shirt', value:"shirt", icon: "bus"},
-  {id:2, name: 'T-Shirt', value:"tshirt",icon: "car"},
-  {id:3, name: 'Jeans', value:"jeans", icon: "bicycle"},
-  {id:4, name: 'Sweater', value:"sweater", icon: "train"},
-  {id:5, name: 'Coat', value:"coat" ,icon: "boat"},
-  {id:6, name: 'Dress', value:"dress", icon: "airplane"},
-  {id:7, name: 'Shoes', value:"shoes", icon: "airplane"},
+const purchaseType = [
+  {id:1, name: 'Smartphone', value:"smartphone", icon: "phone-portrait"},
+  {id:2, name: 'Tablet', value:"tablet",icon: "tablet-portrait"},
+  {id:3, name: 'Computer', value:"computer", icon: "desktop"},
+  {id:4, name: 'Laptop', value:"laptop", icon: "laptop"},
+  {id:5, name: 'TV', value:"tv" ,icon: "tv"},
+  {id:6, name: 'Fossil Fuel Car', value:"fossilFuelCar", icon: "car-sport"},
+  {id:7, name: 'Hybrid Car', value:"hybridCar", icon: "leaf"},
+  {id:8, name: 'Eletric Car', value:"eletricCar", icon: "battery-charging"},
+  {id:9, name: 'Crypto Currency PoW', value:"cryptoCurrencyPoW", icon: "cash"},
+  {id:10, name: 'Single Edition NFT', value:"singleEditionNFT", icon: "cash"},
+
 ]
 
-export {transportType, fashionType, foodType, streamingType, electricityType};
+export {transportType, fashionType, foodType, streamingType, purchaseType};

@@ -1,32 +1,31 @@
 import { View, Text, StyleSheet } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Slider from "@react-native-community/slider";
 
-import { fashion } from 'carbon-footprint';
+import { food } from 'carbon-footprint';
 
-const MIN_SLIDER_VALUE = 1;
-const MAX_SLIDER_VALUE = 10;
+const MIN_SLIDER_VALUE = 20;
+const MAX_SLIDER_VALUE = 500;
 
-const Fashion = ({ emissionModelType, defaultValueSlider, setQuantity, setCo2Emission }) => {
+function roundToTwo(num) {
+  return +(Math.round(num + "e+2")  + "e-2");
+}
+
+const Food = ({ emissionModelType, defaultValueSlider, setQuantity }) => {
   const [sliderValue, setSliderValue] = useState(defaultValueSlider);
 
   const onSliderValueChange = (value) => {
     const val = Math.round(value);
     setSliderValue(val);
     setQuantity(val);
-    setCo2Emission(Math.round(val * fashion[emissionModelType]));
   };
-
-  useEffect(()=> {
-    setCo2Emission(Math.round(sliderValue * fashion[emissionModelType]));
-  },[]);
 
   const renderTotal = () => {
     return (
       <View >
         <Text style={styles.textPrimary}>Quantity</Text>
         <Text style={styles.textSecondary}>{Math.round(sliderValue)} 
-          <Text> item(s)</Text>
+          <Text> grams</Text>
         </Text>
       </View>
     )
@@ -50,7 +49,7 @@ const Fashion = ({ emissionModelType, defaultValueSlider, setQuantity, setCo2Emi
     
       <View>
       <Text style={styles.textSecondary}>
-        <Text style={styles.numberHighlight}>{Math.round(sliderValue * fashion[emissionModelType])}</Text>
+        <Text style={styles.numberHighlight}>{roundToTwo(sliderValue * food[emissionModelType]/1000)}</Text>
           <Text> kgCO2eq</Text>
         </Text>
       </View>
@@ -81,4 +80,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Fashion
+export default Food

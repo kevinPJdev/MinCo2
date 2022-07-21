@@ -5,32 +5,39 @@ import { useSelector } from 'react-redux';
 
 import { emissions as emissionsDucks } from '../ducks/emissions/emissionsSlice';
 import { EmissionListItem } from '../components/EmissionListItem/EmissionListItem';
+import Colors from '../style/colors/Colors';
 
 const emissions = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    emissionModelType: 'Train',
-    name: "Train",
-    title: "Train",
-    co2value: "65",
+    id: "f7ecaeb4-0cb2-4ef3-879a-2b840efe844d",
+    co2Value: 53,
+    creationDate: "2022-07-21T21:33:25.307Z",  
+    emissionModelType: "car",
+    emissionType: "transportType",
+    title: "Car",
+    value: 150000,
     iconName:"md-car"
     
   },
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    emissionModelType: 'Car',
-    name: "Car",
+    co2Value: 53,
+    creationDate: "2022-07-21T21:33:25.307Z",  
+    emissionModelType: "car",
+    emissionType: "transportType",
     title: "Car",
-    co2value: "34",
+    value: 150000,
     iconName:"md-car"
   },
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    emissionModelType: 'Medium Meat',
-    name: "Medium Meat",
-    title: "meat",
-    co2value: "31",
-    iconName:"fast-food"
+    co2Value: 53,
+    creationDate: "2022-07-21T21:33:25.307Z",  
+    emissionModelType: "car",
+    emissionType: "transportType",
+    title: "Car",
+    value: 150000,
+    iconName:"laptop"
   },
 ];
 
@@ -43,34 +50,36 @@ const Item = ({ title }) => (
 
 const EmissionListScreen = () => {
   const navigation = useNavigation();
-  //console.log("Look from here!")
-  const emissions1 = useSelector(state=>state.emissions);
-  //console.log(emissions1);
-  
+  console.log("Look from here!")
+  const emissions1 = useSelector(state => state.emissions);
+  console.log(emissions1);
+
   const renderListFooter = () => <View style={styles.separator} />;
+  
 
   return (
-    <>
+    <View style={styles.container}>
       <Text>July Emissions</Text>
       <FlatList
-        data={emissions}
+        data={emissions1}
         style={styles.container}
-        keyExtractor={({ id }) => id}
+        keyExtractor={({id }) => id}
         renderItem={({
-          item: { id, name, title, co2value, iconName, emissionModelType },
+          item: { id, creationDate, title, value, co2Value, iconName, emissionModelType },
         }) => (
           <EmissionListItem
             id={id}
-            name={name}
+            value={value}
             onPress={() => console.log("Pressed!!")}
             title={title}
-            co2value={co2value}
+            co2Value={co2Value}
             iconName={iconName}
             emissionModelType={emissionModelType}
+            creationDate={creationDate}
           />
         )}
       />
-    </>
+    </View>
   )
 }
 
@@ -79,7 +88,8 @@ export default EmissionListScreen
 const styles = StyleSheet.create({
   container: {
     flex:1,
-    padding:10
+    padding:10,
+    backgroundColor: Colors.green20
   },
   separator: {
     height: 100,

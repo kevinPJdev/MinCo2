@@ -2,28 +2,23 @@ import { Button, TouchableOpacity, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
-import uuid from "uuid";
+import 'react-native-get-random-values';
+import { v4 as uuidv4 } from 'uuid';
 import { actions } from '../../ducks/emissions/emissionsSlice';
+import { budgetActions } from '../../ducks/budget/budgetSlice';
+import { Colors } from '../../style/colors';
 
 
-
-const AddEmissionsButton = (EmissionPayload) => {
+const AddEmissionsButton = ({ EmissionPayload }) => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
-  const emission = {
-    ...EmissionPayload,
-  }
-  console.log("Here I am!")
-  console.log(emission);
-
-
-  dispatch(actions.createEmission(emission));
-
   return (
-
     <TouchableOpacity 
-      onPress={() => {dispatch(actions.createEmission(emission));navigation.navigate("Emissions")}} 
+      onPress={() => 
+        {dispatch(actions.createEmission(EmissionPayload));
+        dispatch(budgetActions.addUsedCarbonBudget(EmissionPayload.co2Value));
+        navigation.navigate("Emissions")}} 
       activeOpacity={0.8}
       style={styles.appButtonContainer}>
       <Text style={styles.appButtonText}>Add Emission</Text>
@@ -34,7 +29,7 @@ const AddEmissionsButton = (EmissionPayload) => {
 const styles = StyleSheet.create({
   appButtonContainer: {
     elevation: 8,
-    backgroundColor: "#5D46B0",
+    backgroundColor: Colors.green40,
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,

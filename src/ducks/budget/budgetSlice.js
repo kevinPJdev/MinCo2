@@ -18,6 +18,6 @@ export const budget = createSlice({
 
 const { setMonthlyCarbonBudget, addUsedCarbonBudget } = budget.actions;
 
-export const actions = { setMonthlyCarbonBudget, addUsedCarbonBudget };
+export const budgetActions = { setMonthlyCarbonBudget, addUsedCarbonBudget };
 
 export const reducer = budget.reducer;

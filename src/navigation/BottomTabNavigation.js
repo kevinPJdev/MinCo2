@@ -9,7 +9,6 @@ import EmissionListScreen from "../screens/EmissionListScreen";
 import BudgetNavigator from "./BottomTab/BudgetNavigator";
 import AddEmissionsNavigator from "./BottomTab/AddEmissionsNavigator";
 import LearnScreen from "../screens/LearnScreen";
-import ChatScreen from "../screens/ChatScreen";
 
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
@@ -37,8 +36,8 @@ const LearnOptions = {
   tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"md-reader"} />,
 };
 
-const ChatOptions = {
-  tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"chatbubbles-sharp"} />,
+const ScanOptions = {
+  tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"md-scan"} />,
 };
 
 export default function BottomTabNavigation() {
@@ -55,7 +54,7 @@ export default function BottomTabNavigation() {
           elevation:0,
           borderRadius:15,
           height: 90,
-          backgroundColor: '#B2A2E8',
+  
         },
       }}
       >
@@ -70,19 +69,19 @@ export default function BottomTabNavigation() {
         options={EmissionsOptions}  
       />
       <BottomTab.Screen 
-        name="Add Emissions" 
+        name="A Emissions" 
         component={AddEmissionsNavigator}
         options={AddEmissionOptions} 
+      />
+      <BottomTab.Screen 
+        name="Scan" 
+        component={BarCodeScanScreen}
+        options={ScanOptions} 
       />
       <BottomTab.Screen 
         name="Learn" 
         component={LearnScreen}
         options={LearnOptions} 
-      />
-      <BottomTab.Screen 
-        name="Scan" 
-        component={BarCodeScanScreen}
-        options={ChatOptions} 
       />
     </BottomTab.Navigator>
   )

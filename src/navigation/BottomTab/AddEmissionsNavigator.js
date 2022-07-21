@@ -28,10 +28,6 @@ const AddEmissionsNavigator = () => {
         name="Create Emissions" 
         component={CreateEmissionScreen}
       />
-      <Stack.Screen 
-        name="Emissions"
-        component={EmissionListScreen}
-      />
     </Stack.Navigator>
   )
 }
