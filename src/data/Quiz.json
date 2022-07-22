@@ -1,0 +1,28 @@
+[
+  {
+    "text": "What is your preferred way to commute",
+    "options": [
+      {
+        "value": 0.55,
+        "label": "Car"
+      },
+      {
+        "value": 2,
+        "label": "Bus"
+      }
+    ]
+  },
+  {
+    "text": "Test 1",
+    "options": [
+      {
+        "value": 1,
+        "label": "Car"
+      },
+      {
+        "value": 2,
+        "label": "Bus"
+      }
+    ]
+  }
+]
