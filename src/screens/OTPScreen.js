@@ -14,7 +14,7 @@ import { firebaseConfig } from "../config";
 import { useNavigation } from "@react-navigation/native";
 
 const OTPScreen = (props) => {
-  console.log("OTPScreen props:", props);
+  console.log("OTPScreen props:", props, props.route.params.verificationId);
   const [code, setCode] = useState("");
   const navigation = useNavigation();
 
@@ -29,12 +29,11 @@ const OTPScreen = (props) => {
       .then((res) => {
         console.log("OTP Response :", res);
         setCode("");
-        navigation.navigate("Budget", res);
+        navigation.navigate("budget", res);
       })
       .catch((err) => {
         alert(err);
       });
-    Alert.alert("Login Successful");
   };
 
   return (
