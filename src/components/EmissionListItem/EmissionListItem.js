@@ -1,9 +1,8 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { FormattedNumber } from "react-native-globalize";
 
-import {Colors} from '../../style/colors';
+import { Colors } from "../../style/colors";
 
 const EmissionListItem = ({
   id,
@@ -13,7 +12,7 @@ const EmissionListItem = ({
   co2Value,
   onPress,
   emissionModelType,
-  creationDate
+  creationDate,
 }) => (
   <TouchableOpacity onPress={onPress} style={styles.container}>
     <View style={styles.iconContainer}>
@@ -27,7 +26,7 @@ const EmissionListItem = ({
     <View style={styles.textContainer}>
       <Text style={styles.textPrimary}>{title}</Text>
       <View style={styles.detailsContainer}>
-        <Text style={styles.textSecondary}> 
+        <Text style={styles.textSecondary}>
           <Text style={styles.co2Value}>{co2Value}</Text> kgCO2
         </Text>
       </View>
@@ -56,7 +55,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginVertical: 3,
     backgroundColor: "#355F56",
-    borderRadius: 15
+    borderRadius: 15,
   },
   textContainer: {
     flex: 1,
@@ -72,9 +71,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Colors.green40,
-    width:40,
-    height:40,
-    borderRadius: 20
+    width: 40,
+    height: 40,
+    borderRadius: 20,
   },
   detailsContainer: {
     marginVertical: 2,
@@ -82,18 +81,17 @@ const styles = StyleSheet.create({
   },
   textPrimary: {
     fontSize: 18,
-    fontWeight: '500',
-    color: Colors.white
+    fontWeight: "500",
+    color: Colors.white,
   },
   textSecondary: {
-    color: Colors.white
+    color: Colors.white,
   },
   co2Value: {
     color: Colors.white,
     fontSize: 15,
-    fontWeight: "800"
-
-  }
+    fontWeight: "800",
+  },
 });
 
 export { EmissionListItem };
