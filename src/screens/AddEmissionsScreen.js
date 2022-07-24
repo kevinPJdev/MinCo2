@@ -63,13 +63,6 @@ const styles = StyleSheet.create({
     paddingTop: 20
 
   },
-  headerContainer: {
-    backgroundColor: '#000',
-    borderBottomColor:"#000",
-    borderBottomWidth:3,
-    marginVertical:10,
-    borderRadius:5
-  },
   scrollContainer: {
     padding: 10,
   }
