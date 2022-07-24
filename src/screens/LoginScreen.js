@@ -8,12 +8,17 @@ import {
   TextInput,
   StyleSheet,
   Alert,
+  Image,
+  ToastAndroid,
+  Platform,
+  AlertIOS,
 } from "react-native";
 import React, { useRef, useState } from "react";
 import { FirebaseRecaptchaVerifierModal } from "expo-firebase-recaptcha";
 import firebase from "firebase/compat/app";
 import { firebaseConfig } from "../config";
 import { useNavigation } from "@react-navigation/native";
+import Minco from "./Minco.png";
 
 const LoginScreen = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -38,7 +43,16 @@ const LoginScreen = () => {
         navigation.navigate("OTP", {
           verificationId: res,
         });
+      })
+      .catch((err) => {
+        console.log("Verification Error:", err, "jaiman", err.message);
+        switch (err.code) {
+          case "auth/invalid-phone-number":
+            alert("Invalid Phone Number !");
+            break;
+        }
       });
+
     setPhoneNumber("");
   };
 
@@ -74,6 +88,7 @@ const LoginScreen = () => {
           ref={recaptchaVerifier}
           firebaseConfig={firebaseConfig}
         />
+        <Image source={Minco} style={styles.imageMin} />
         <Text style={styles.textPhoneNon}>Enter you Phone Number</Text>
         <View style={styles.phoneContainer}>
           <Text style={styles.prefix}>+1</Text>
@@ -132,6 +147,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 10,
     marginTop: 0,
+  },
+  imageMin: {
+    marginTop: "-20%",
+    width: "100%",
+    height: "50%",
   },
   phoneContainer: {
     flexDirection: "row",
