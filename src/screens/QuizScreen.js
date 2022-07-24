@@ -6,14 +6,11 @@ import {
   FlatList,
   Alert,
 } from "react-native";
-import Data from "../data/Quiz.json";
 import React from "react";
 import { Colors } from "../style/colors";
 import QuizButtonScreen from "../components/Button/QuizButtonScreen";
 import { useNavigation } from "@react-navigation/native";
-import { ScrollView } from "react-native-gesture-handler";
-import { transport } from "carbon-footprint";
-console.log(transport);
+
 const styles = StyleSheet.create({
   pageHeading: {
     color: "#FFF",
@@ -64,12 +61,13 @@ const styles = StyleSheet.create({
  * Screen for showing Quiz to user
  * as per the data stored locally
  */
-const QuizScreen = () => {
+const QuizScreen = ({ data }) => {
   const [selectedOptions, setSelectedOptions] = React.useState({});
   /**
    * Don't allow submit until all questions's answers are selected
    */
-  const isSubmitDisabled = Object.keys(selectedOptions).length != Data.length;
+  const isSubmitDisabled =
+    Object.keys(selectedOptions).length != (data || []).length;
   /**
    * Hook to manage navigation
    */
@@ -93,8 +91,8 @@ const QuizScreen = () => {
     const [question, questionIndex] = [item, index];
     return (
       <View style={styles.question}>
-        <Text style={styles.questionTitle}>{question.text}</Text>
-        {question.options.map((option) => {
+        <Text style={styles.questionTitle}>{question.text || ""} </Text>
+        {(question.options || []).map((option) => {
           const isOptionSelected =
             selectedOptions[questionIndex] == option.value;
           return (
@@ -143,7 +141,7 @@ const QuizScreen = () => {
       <Text style={styles.pageHeading}>WELCOME TO QUIZ SCREEN</Text>
 
       <FlatList
-        data={Data}
+        data={data || []}
         renderItem={questionMapper}
         style={styles.scrollContainer}
       />
