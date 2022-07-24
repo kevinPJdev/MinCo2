@@ -13,14 +13,17 @@ import {
   Platform,
   AlertIOS,
 } from "react-native";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { FirebaseRecaptchaVerifierModal } from "expo-firebase-recaptcha";
 import firebase from "firebase/compat/app";
 import { firebaseConfig } from "../config";
 import { useNavigation } from "@react-navigation/native";
 import Minco from "./Minco.png";
+import { getAuth, signOut } from "firebase/auth";
 
 const LoginScreen = () => {
+  const auth = getAuth();
+
   const [phoneNumber, setPhoneNumber] = useState("");
   const [code, setCode] = useState("");
   const [verificationId, setVerificationId] = useState(null);
@@ -28,7 +31,7 @@ const LoginScreen = () => {
   const navigation = useNavigation();
 
   const navigateTOOTP = () => {
-    navigation.navigate("OTP", {
+    navigation.replace("OTP", {
       phoneNumber: "dawsac",
     });
   };
@@ -58,21 +61,14 @@ const LoginScreen = () => {
 
   console.log("VErify id:", verificationId);
 
-  const confirmCode = () => {
-    const credential = firebase.auth.PhoneAuthProvider.credential(
-      verificationId,
-      code
-    );
-    firebase
-      .auth()
-      .signInWithCredential(credential)
+  const handleSignOut = () => {
+    signOut(auth)
       .then(() => {
-        setCode("");
+        // Sign-out successful.
       })
-      .catch((err) => {
-        alert(err);
+      .catch((error) => {
+        // An error happened.
       });
-    Alert.alert("Login Successful");
   };
 
   const callSetPhoneNumber = (number) => {
@@ -108,6 +104,12 @@ const LoginScreen = () => {
             <Text style={styles.buttonText}>Login</Text>
           </TouchableOpacity>
         </View>
+
+        {/* <View style={styles.buttonContainer}>
+          <TouchableOpacity onPress={handleSignOut} style={styles.button}>
+            <Text style={styles.buttonText}>Logout</Text>
+          </TouchableOpacity>
+        </View> */}
         {/* <View style={styles.buttonContainer}>
           <TouchableOpacity onPress={navigateTOOTP} style={styles.button}>
             <Text style={styles.buttonText}>Navigate</Text>

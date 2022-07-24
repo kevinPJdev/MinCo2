@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   View,
   KeyboardAvoidingView,
@@ -12,11 +12,28 @@ import { FirebaseRecaptchaVerifierModal } from "expo-firebase-recaptcha";
 import firebase from "firebase/compat/app";
 import { firebaseConfig } from "../config";
 import { useNavigation } from "@react-navigation/native";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const OTPScreen = (props) => {
-  console.log("OTPScreen props:", props, props.route.params.verificationId);
   const [code, setCode] = useState("");
   const navigation = useNavigation();
+
+  const auth = getAuth();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        console.log("User is signed in : LOGIN", user);
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        console.log("User is signed out : LOGIN");
+      }
+    });
+  }, [auth]);
 
   const confirmCode = () => {
     const credential = firebase.auth.PhoneAuthProvider.credential(
@@ -29,7 +46,7 @@ const OTPScreen = (props) => {
       .then((res) => {
         console.log("OTP Response :", res);
         setCode("");
-        navigation.navigate("budget", res);
+        // navigation.replace("budget");
       })
       .catch((err) => {
         alert(err);
