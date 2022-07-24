@@ -9,9 +9,11 @@ import {
 import Data from "../data/Quiz.json";
 import React from "react";
 import { Colors } from "../style/colors";
-import Button from "../components/Button/Button";
+import QuizButtonScreen from "../components/Button/QuizButtonScreen";
 import { useNavigation } from "@react-navigation/native";
-
+import { ScrollView } from "react-native-gesture-handler";
+import { transport } from "carbon-footprint";
+console.log(transport);
 const styles = StyleSheet.create({
   pageHeading: {
     color: "#FFF",
@@ -128,23 +130,24 @@ const QuizScreen = () => {
      * Show result in a Dialog
      * and redirect to Emission screen
      */
-    Alert.alert("Quiz Result", `Your Co2 emission is ${totalEmission}`, [
+    Alert.alert("Quiz Result", `Your Co2 emission is ${totalEmission} kgCO2`, [
       {
         text: "Thanks!",
-        onPress: () => navigation.navigate("Emissions"),
+        onPress: () => navigation.navigate("Budget"),
       },
     ]);
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.pageHeading}>QUIZ SCREEN</Text>
+      <Text style={styles.pageHeading}>WELCOME TO QUIZ SCREEN</Text>
+
       <FlatList
         data={Data}
         renderItem={questionMapper}
         style={styles.scrollContainer}
       />
-      <Button
+      <QuizButtonScreen
         title="Submit Quiz"
         onPress={showQuizResult}
         disabled={isSubmitDisabled}
