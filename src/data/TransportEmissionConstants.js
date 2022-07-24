@@ -54,5 +54,14 @@ const purchaseType = [
   {id:10, name: 'Single Edition NFT', value:"singleEditionNFT", icon: "cash"},
 
 ]
+const mealType = [
+  {id:1, name: 'High Meat', value:"highMeat", icon: "fast-food"},
+  {id:2, name: 'Medium Meat', value:"mediumMeat",icon: "fast-food"},
+  {id:3, name: 'Low Meat', value:"lowMeat", icon: "fast-food"},
+  {id:4, name: 'Vegetarian', value:"vegetarian", icon: "ios-leaf-sharp"},
+  {id:5, name: 'Vegan', value:"vegan", icon: "nutrition-sharp"},
 
-export {transportType, fashionType, foodType, streamingType, purchaseType};
+
+]
+
+export {transportType, fashionType, foodType, streamingType, purchaseType,mealType};

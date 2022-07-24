@@ -3,7 +3,7 @@ import React from 'react'
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 import ListItem from '../components/ListItem/ListItem';
-import {transportType, fashionType, foodType, streamingType, purchaseType} from '../data/TransportEmissionConstants'
+import {transportType, fashionType, foodType, streamingType, purchaseType,mealType} from '../data/TransportEmissionConstants'
 import { Colors } from '../style/colors';
 
 
@@ -19,6 +19,8 @@ const getSubCategory = (emissionType) => {
       return streamingType
     case 'purchaseType':
       return purchaseType
+    case 'mealType':
+      return mealType
     default:
       return null;
   }
