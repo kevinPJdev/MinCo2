@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
-
 import { Colors } from "../../style/colors";
-
-const Button = ({ onPress, title, disabled }) => {
+const QuizButtonScreen = ({ onPress, title, disabled }) => {
   return (
     <TouchableOpacity
       activeOpacity={0.8}
@@ -16,7 +14,7 @@ const Button = ({ onPress, title, disabled }) => {
   );
 };
 
-export default Button;
+export default QuizButtonScreen;
 
 const styles = StyleSheet.create({
   appButtonContainer: {
@@ -25,9 +23,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 12,
+    marginLeft: 140,
+    marginRight: 50,
+    width: "30%",
   },
   appButtonText: {
-    fontSize: 20,
+    fontSize: 13,
     color: Colors.white,
     fontWeight: "bold",
     alignSelf: "center",

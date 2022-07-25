@@ -1,0 +1,345 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Quiz Screen Test snapshot 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#66BDAB",
+      "flex": 1,
+      "flexDirection": "column",
+      "paddingTop": 20,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#FFF",
+        "textAlign": "center",
+      }
+    }
+  >
+    WELCOME TO QUIZ SCREEN
+  </Text>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "options": Array [
+            Object {
+              "label": "Testing",
+              "value": 0.2604,
+            },
+          ],
+          "text": "Testing.",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "padding": 10,
+      }
+    }
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "borderColor": "#A8C8C1",
+              "borderRadius": 10,
+              "borderWidth": 3,
+              "margin": 5,
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "marginBottom": 6,
+              }
+            }
+          >
+            Testing.
+             
+          </Text>
+          <View>
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "backgroundColor": "#164239",
+                  "borderColor": "#A8C8C1",
+                  "borderRadius": 10,
+                  "borderWidth": 3,
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "marginBottom": 10,
+                  "opacity": 1,
+                  "paddingHorizontal": 10,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#FFF",
+                  }
+                }
+              >
+                Testing
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    accessibilityState={
+      Object {
+        "disabled": true,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#164239",
+        "borderRadius": 10,
+        "elevation": 8,
+        "marginLeft": 140,
+        "marginRight": 50,
+        "opacity": 1,
+        "paddingHorizontal": 12,
+        "paddingVertical": 10,
+        "width": "30%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "alignSelf": "center",
+          "color": "#FFFFFF",
+          "fontSize": 13,
+          "fontWeight": "bold",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      Submit Quiz
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Render Quiz Screen Test snapshot data 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#66BDAB",
+      "flex": 1,
+      "flexDirection": "column",
+      "paddingTop": 20,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "#FFF",
+        "textAlign": "center",
+      }
+    }
+  >
+    WELCOME TO QUIZ SCREEN
+  </Text>
+  <RCTScrollView
+    data={
+      Array [
+        Object {
+          "options": Array [
+            Object {
+              "label": "Testing",
+              "value": 0.2604,
+            },
+          ],
+          "text": "Testing.",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    style={
+      Object {
+        "padding": 10,
+      }
+    }
+    viewabilityConfigCallbackPairs={Array []}
+  >
+    <View>
+      <View
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            Object {
+              "borderColor": "#A8C8C1",
+              "borderRadius": 10,
+              "borderWidth": 3,
+              "margin": 5,
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "marginBottom": 6,
+              }
+            }
+          >
+            Testing.
+             
+          </Text>
+          <View>
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "backgroundColor": "#164239",
+                  "borderColor": "#A8C8C1",
+                  "borderRadius": 10,
+                  "borderWidth": 3,
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "marginBottom": 10,
+                  "opacity": 1,
+                  "paddingHorizontal": 10,
+                  "paddingVertical": 5,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#FFF",
+                  }
+                }
+              >
+                Testing
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    accessibilityState={
+      Object {
+        "disabled": true,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "backgroundColor": "#164239",
+        "borderRadius": 10,
+        "elevation": 8,
+        "marginLeft": 140,
+        "marginRight": 50,
+        "opacity": 1,
+        "paddingHorizontal": 12,
+        "paddingVertical": 10,
+        "width": "30%",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "alignSelf": "center",
+          "color": "#FFFFFF",
+          "fontSize": 13,
+          "fontWeight": "bold",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      Submit Quiz
+    </Text>
+  </View>
+</View>
+`;

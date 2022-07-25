@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     paddingTop: 20
 
   },
+<<<<<<< HEAD
   subContainer:{
     flex:1, 
     flexDirection:"column", 
@@ -82,6 +83,8 @@ const styles = StyleSheet.create({
     marginVertical:10,
     borderRadius:5
   },
+=======
+>>>>>>> main
   scrollContainer: {
     padding: 10,
   }
