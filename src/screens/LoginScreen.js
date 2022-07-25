@@ -53,6 +53,24 @@ const LoginScreen = () => {
           case "auth/invalid-phone-number":
             alert("Invalid Phone Number !");
             break;
+          case "auth/missing-phone-number":
+            alert("Missing Phone Number !");
+            break;
+          case "auth/quota-exceeded":
+            alert("Quota Exceeded !");
+            break;
+          case "auth/user-disabled":
+            alert("User Disabled !");
+            break;
+          case "auth/operation-not-allowed":
+            alert("Something went Wrong please try Again !");
+            break;
+          case "auth/too-many-requests":
+            alert("Too many requests ! Please try again later");
+            break;
+          default:
+            alert("Something went wrong ! Please try again later");
+            break;
         }
       });
 
@@ -171,7 +189,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    backgroundColor: "#0782F9",
+    backgroundColor: "#164239",
     width: "100%",
     padding: 15,
     borderRadius: 10,
@@ -180,14 +198,14 @@ const styles = StyleSheet.create({
   buttonOutline: {
     backgroundColor: "white",
     marginTop: 5,
-    borderColor: "#0782F9",
+    borderColor: "#164239",
     borderWidth: 2,
   },
   textPhoneNon: {
     fontSize: 16,
     fontWeight: "bold",
     marginTop: 20,
-    color: "#0782F9",
+    color: "#164239",
   },
   buttonText: {
     color: "white",
@@ -195,7 +213,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   buttonOutlineText: {
-    color: "#0782F9",
+    color: "#164239",
     fontWeight: "700",
     fontSize: 16,
   },
