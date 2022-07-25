@@ -11,7 +11,7 @@ function AddEmissionsScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={{flex:1, flexDirection:"column", justifyContent:"space-between"}}>
+      <View style={styles.subContainer}>
       <ScrollView style={styles.scrollContainer}>
           <ListItem 
             title="Food" 
@@ -48,6 +48,13 @@ function AddEmissionsScreen() {
             })} 
             iconName="cash"
           />
+            <ListItem 
+            title="Meal" 
+            onPress={()=> navigation.navigate('Select Sub Category', {
+              emissionType: 'mealType', iconName:"md-restaurant"
+            })} 
+            iconName="md-restaurant"
+          />
         </ScrollView>
       </View>
     </View>
@@ -63,6 +70,21 @@ const styles = StyleSheet.create({
     paddingTop: 20
 
   },
+<<<<<<< HEAD
+  subContainer:{
+    flex:1, 
+    flexDirection:"column", 
+    justifyContent:"space-between"
+  },
+  headerContainer: {
+    backgroundColor: '#000',
+    borderBottomColor:"#000",
+    borderBottomWidth:3,
+    marginVertical:10,
+    borderRadius:5
+  },
+=======
+>>>>>>> main
   scrollContainer: {
     padding: 10,
   }
