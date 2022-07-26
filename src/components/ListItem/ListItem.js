@@ -23,6 +23,7 @@ const ListItem = ({title, onPress, iconName = "md-car"}) => {
   )
 }
 
+
 export default ListItem
 
 const styles = StyleSheet.create({

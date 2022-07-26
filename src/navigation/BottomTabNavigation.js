@@ -8,6 +8,7 @@ import TabBarIcons from "../components/TabBarIcons/TabBarIcons";
 import EmissionListScreen from "../screens/EmissionListScreen";
 import BudgetNavigator from "./BottomTab/BudgetNavigator";
 import AddEmissionsNavigator from "./BottomTab/AddEmissionsNavigator";
+import LearnScreenNavigator from "./BottomTab/LearnScreenNavigation";
 import LearnScreen from "../screens/LearnScreen";
 
 
@@ -34,6 +35,7 @@ const AddEmissionOptions = {
 
 const LearnOptions = {
   tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"md-reader"} />,
+  headerShown: false
 };
 
 const ScanOptions = {
@@ -80,7 +82,7 @@ export default function BottomTabNavigation() {
       />
       <BottomTab.Screen 
         name="Learn" 
-        component={LearnScreen}
+        component={LearnScreenNavigator}
         options={LearnOptions} 
       />
     </BottomTab.Navigator>

@@ -45,26 +45,12 @@ const OTPScreen = (props) => {
       .signInWithCredential(credential)
       .then((res) => {
         console.log("OTP Response :", res);
+        setCode("");
         // navigation.replace("budget");
       })
       .catch((err) => {
-        console.log("OTP Error :", err);
-        switch (err.code) {
-          case "auth/code-expired":
-            alert("Incorrect OTP !");
-            break;
-          case "auth/invalid-verification-code":
-            alert("Incorrect OTP !");
-            break;
-          case "auth/too-many-requests":
-            alert("Too many requests !");
-            break;
-          default:
-            alert("Something went wrong !");
-            break;
-        }
+        alert(err);
       });
-    setCode("");
   };
 
   return (
@@ -118,7 +104,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   otpButton: {
-    backgroundColor: "#164239",
+    backgroundColor: "#0782F9",
     width: "50%",
     padding: 10,
     borderRadius: 10,
@@ -128,14 +114,14 @@ const styles = StyleSheet.create({
   buttonOutline: {
     backgroundColor: "white",
     marginTop: 5,
-    borderColor: "#164239",
+    borderColor: "#0782F9",
     borderWidth: 2,
   },
   textPhoneNon: {
     fontSize: 16,
     fontWeight: "bold",
     marginTop: 20,
-    color: "#164239",
+    color: "#0782F9",
   },
   buttonText: {
     color: "white",
@@ -144,7 +130,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   buttonOutlineText: {
-    color: "#164239",
+    color: "#0782F9",
     fontWeight: "700",
     fontSize: 16,
   },
