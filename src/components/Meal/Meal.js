@@ -1,44 +1,32 @@
 import { View, Text, StyleSheet } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Slider from "@react-native-community/slider";
-import { streaming, getInternetUsageCarbonImpact } from 'carbon-footprint';
 
-import convertMinutesToHoursAnMinutes from '../../utils/time.js';
+import { meal } from 'carbon-footprint';
 
-const MIN_SLIDER_VALUE = 15 * 60;
-const MAX_SLIDER_VALUE = 10 * 60 * 60;
+const MIN_SLIDER_VALUE = 1;
+const MAX_SLIDER_VALUE = 10;
 
-function roundToTwo(num) {
-  return +(Math.round(num + "e+2")  + "e-2");
-}
-
-const Streaming = ({ emissionModelType, defaultValueSlider, setDurationSeconds, setCo2Emission }) => {
+const Meal = ({ emissionModelType, defaultValueSlider, setMealQuantity, setCo2Emission }) => {
   const [sliderValue, setSliderValue] = useState(defaultValueSlider);
 
-  
   const onSliderValueChange = (value) => {
     const val = Math.round(value);
     setSliderValue(val);
-    setDurationSeconds(val);
+    setMealQuantity(val);
+    setCo2Emission(Math.round(val * meal[emissionModelType]));
   };
-  
-  const carbonValue = getInternetUsageCarbonImpact(
-    sliderValue,
-    streaming[emissionModelType] * sliderValue,
-    "world"
-  );
 
-  const { hours, minutes } = convertMinutesToHoursAnMinutes(sliderValue / 60);
-
-
-  console.log(carbonValue);
+  useEffect(()=> {
+    setCo2Emission(Math.round(sliderValue * meal[emissionModelType]));
+  },[]);
 
   const renderTotal = () => {
     return (
       <View >
-        <Text style={styles.textPrimary}>Duration</Text>
-        <Text style={styles.textSecondary}>{hours + " hour(s) and " + minutes} 
-          <Text> minute(s)</Text>
+        <Text style={styles.textPrimary}>Quantity</Text>
+        <Text style={styles.textSecondary}>{Math.round(sliderValue)} 
+          <Text> item(s)</Text>
         </Text>
       </View>
     )
@@ -62,9 +50,8 @@ const Streaming = ({ emissionModelType, defaultValueSlider, setDurationSeconds, 
     
       <View>
       <Text style={styles.textSecondary}>
-        <Text style={styles.numberHighlight}>{roundToTwo(carbonValue > 1 ? carbonValue : carbonValue * 1000)}</Text>
-          {setCo2Emission(roundToTwo(carbonValue > 1 ? carbonValue : carbonValue))}
-          <Text>{carbonValue > 1 ? " kgCO2eq" : " gCO2eq"}</Text>
+        <Text style={styles.numberHighlight}>{Math.round(sliderValue * meal[emissionModelType])}</Text>
+          <Text> kgCO2eq</Text>
         </Text>
       </View>
     </>
@@ -94,4 +81,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Streaming
+export default Meal

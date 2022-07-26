@@ -3,6 +3,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import BudgetScreen from '../../screens/BudgetScreen'
 import QuizScreen from "../../screens/QuizScreen";
+import data from "../../data/Quiz.json";
 
 const Stack = createStackNavigator();
 
@@ -20,8 +21,7 @@ const BudgetNavigator = () => {
       />
       <Stack.Screen 
         name="Quiz" 
-        component={QuizScreen}
-      />
+        component={() => <QuizScreen data={data} />} />
     </Stack.Navigator>
   )
 }

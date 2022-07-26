@@ -46,12 +46,14 @@ const BarCodeScanScreen = () => {
     setError(false);
     setIsFetchingData(true);
 
+    console.log(data);
+
     const headers = new Headers({
       Accept: "application/json",
       "Content-Type": "application/json",
     });
     
-    fetch('https://world.openfoodfacts.org/api/v0/product/762230033638.data', {
+    fetch(`https://world.openfoodfacts.org/api/v0/product/${data}`, {
       method: 'GET',
       headers: headers,
     })
@@ -66,6 +68,7 @@ const BarCodeScanScreen = () => {
               productName : productName,
               productCarbonFootprint: productCarbonFootprint,
             });
+      
           } else {
             setScanned(false);
             setHasCarbonData(false);

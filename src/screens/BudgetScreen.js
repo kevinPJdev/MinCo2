@@ -94,6 +94,9 @@ function BudgetScreen() {
             setModalVisible={setModalVisible}
           />
         </View>
+        <View style={styles.textDivisionContainer}>
+          <Text style={styles.textStyle}>Not sure what you should be setting your budget to? Take a quiz</Text>
+        </View>
         <View>
           <Button onPress={() => nav.navigate("Quiz")} title={"Take a Quiz"} />
         </View>
@@ -138,6 +141,12 @@ const styles = StyleSheet.create({
     color: Colors.green50,
     fontWeight: "400",
   },
+  textDivisionContainer: {
+    padding: 20,
+    borderColor: Colors.green30,
+    borderWidth: 2,
+    marginBottom: 15
+  }
 });
 
 export default BudgetScreen;

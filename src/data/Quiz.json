@@ -1,0 +1,123 @@
+[
+  {
+    "text": "1. Select transport mode you use most frequently?",
+    "options": [
+      {
+        "value": 0.2604,
+        "label": "Car"
+      },
+      {
+        "value": 0.1,
+        "label": "Bus"
+      },
+      {
+        "value": 0.16,
+        "label": "Train"
+      },
+      {
+        "value": 0.105,
+        "label": "Motorbike"
+      }
+    ]
+  },
+  {
+    "text": "2. On average basis how much time per day do you spend travelling?",
+    "options": [
+      {
+        "value": 50,
+        "label": "0-2 hours"
+      },
+      {
+        "value": 100,
+        "label": "2-4 hours"
+      },
+      {
+        "value": 200,
+        "label": "4-6 hours"
+      },
+      {
+        "value": 250,
+        "label": "6-8 hours"
+      },
+      {
+        "value": 300,
+        "label": "More than 8 hours"
+      }
+    ]
+  },
+  {
+    "text": "3. Which of the following best describes your average daily food consumption?",
+    "options": [
+      {
+        "value": 80,
+        "label": "High Meat"
+      },
+      {
+        "value": 60,
+        "label": "Medium Meat"
+      },
+      {
+        "value": 45,
+        "label": "Low Meat"
+      },
+      {
+        "value": 25,
+        "label": "Pescetarian"
+      },
+      {
+        "value": 15,
+        "label": "Vegetarian"
+      },
+      {
+        "value": 12,
+        "label": "Vegan"
+      }
+    ]
+  },
+  {
+    "text": "4.How long are your flights usually?",
+    "options": [
+      {
+        "value": 0,
+        "label": "I don't fly at all."
+      },
+      {
+        "value": 100,
+        "label": "Short(Up to 3 hours)"
+      },
+      {
+        "value": 120,
+        "label": "Medium(3-6 hours long)"
+      },
+      {
+        "value": 150,
+        "label": "Long(6+ hours)"
+      }
+    ]
+  },
+  {
+    "text": "5. Which of the following best describes your average daily electricity consumption?",
+    "options": [
+      {
+        "value": 100,
+        "label": "Below 200kWh"
+      },
+      {
+        "value": 200,
+        "label": "200kWh-400kWh"
+      },
+      {
+        "value": 300,
+        "label": "400kWh-600kWh"
+      },
+      {
+        "value": 400,
+        "label": "600kWh-800kWh"
+      },
+      {
+        "value": 500,
+        "label": "Above 800kWh"
+      }
+    ]
+  }
+]

@@ -11,10 +11,12 @@ const ListItem = ({title, onPress, iconName = "info"}) => {
       activeOpacity={0.8} 
       onPress={onPress}
       style={styles.container}>
-      <View style={styles.iconContainer}>
-        <Octicons name={iconName} size={20} color={Colors.black} />
-      </View>
-      <Text style={styles.appButtonText}>{title}</Text>
+        <View style={styles.optionContainer}>
+          <View style={styles.iconContainer}>
+            <Octicons name={iconName} size={20} color={Colors.black} />
+          </View>
+          <Text style={styles.appButtonText}>{title}</Text>
+        </View>
     </TouchableOpacity>
   )
 }
@@ -125,6 +127,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10
   },
   iconContainer: {
-    paddingRight: 10
+    paddingRight: 0
+  },
+  optionContainer: {
+    flex:1,
+    flexDirection: "row",
   }
 })

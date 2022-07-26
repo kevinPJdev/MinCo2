@@ -36,6 +36,7 @@ const AddEmissionOptions = {
 
 const LearnOptions = {
   tabBarIcon: ({ focused }) => <TabBarIcons focused={focused} name={"md-reader"} />,
+  headerShown: false
 };
 
 const ScanOptions = {
@@ -82,7 +83,7 @@ export default function BottomTabNavigation() {
         options={ScanOptions} 
       />
       <BottomTab.Screen 
-        name="Learn" 
+        name="LearnScreen" 
         component={LearnScreenNavigator}
         options={LearnOptions} 
       />

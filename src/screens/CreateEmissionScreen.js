@@ -12,6 +12,7 @@ import AddEmissionsButton from '../components/AddEmissionsButton/AddEmissionsBut
 import Food from '../components/Food/Food';
 import Streaming from '../components/Streaming/Streaming';
 import Purchase from '../components/Purchase/Purchase';
+import Meal from '../components/Meal/Meal';
 import { Colors } from '../style/colors';
 
 const DEFAULT_SLIDER_VALUE_TRANSPORT = 150 * 1000
@@ -19,6 +20,8 @@ const DEFAULT_SLIDER_VALUE_FASHION = 1;
 const DEFAULT_SLIDER_VALUE_FOOD = 200;
 const DEFAULT_SLIDER_VALUE_STREAMING = 120 * 60;
 const DEFAULT_SLIDER_VALUE_PURCHASE = 1;
+const DEFAULT_SLIDER_VALUE_MEAL = 1;
+
 
 const emissionPayload = {
   id: "",
@@ -39,6 +42,7 @@ const CreateEmissionScreen = () => {
   const [distance, setDistance] = useState(DEFAULT_SLIDER_VALUE_TRANSPORT);
   const [fashionQuantity, setFashionQuantity] = useState(DEFAULT_SLIDER_VALUE_FASHION);
   const [purchaseQuantity, setPurchaseQuantity] = useState(DEFAULT_SLIDER_VALUE_PURCHASE);
+  const [mealQuantity, setMealQuantity] = useState(DEFAULT_SLIDER_VALUE_MEAL);
   const [foodQuantity, setFoodQuantity] = useState();
   const [creationDate, setCreationDate] = useState(moment().utc());
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
@@ -72,6 +76,8 @@ const CreateEmissionScreen = () => {
       return renderStreaming()
     case 'purchaseType':
       return renderPurchase()
+    case 'mealType':
+      return renderMeal()
     default:
       return renderTransport()
   }
@@ -144,6 +150,17 @@ const CreateEmissionScreen = () => {
       emissionModelType={emissionModelType}
       defaultValueSlider={DEFAULT_SLIDER_VALUE_PURCHASE}
       setQuantity={setPurchaseQuantity}
+      setCo2Emission={setCo2Emission}
+      />
+    )
+  }
+
+  const renderMeal = () => {
+    return(
+      <Meal 
+      emissionModelType={emissionModelType}
+      defaultValueSlider={DEFAULT_SLIDER_VALUE_MEAL}
+      setMealQuantity={setMealQuantity}
       setCo2Emission={setCo2Emission}
       />
     )

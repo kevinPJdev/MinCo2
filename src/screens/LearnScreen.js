@@ -1,4 +1,4 @@
-import { StyleSheet, Text, SafeAreaView,Button,Alert } from 'react-native'
+import { StyleSheet, Text, SafeAreaView,Button,Alert, ScrollView } from 'react-native'
 import React,{ useState }  from 'react'
 import RadioGroup from 'react-native-radio-buttons-group';
 import { useNavigation } from '@react-navigation/native';
@@ -94,7 +94,7 @@ const LearnScreen = () => {
   const [radioButtons2, setRadioButtons2] = useState(radioButtonsData2);
   const [isDisabled2, setDisabled2] = useState(true);
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
     <Text style={styles.mainText}>Howdy-Doody!</Text>
     <Text style={styles.subText} >You are a few steps away from becoming a Green Warrior!
      Answer a simple question and make the most out of our knowledge pool:</Text>
@@ -122,7 +122,7 @@ const LearnScreen = () => {
     color="#000"
     onPress={()=> navigation.navigate('Articles')}
      />  
-    </SafeAreaView>
+    </ScrollView>
   )
 }
 
@@ -132,25 +132,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.green20,
-    alignItems: 'left',
-    paddingTop: 10,
+    padding: 0
   },
   mainText:{
     fontSize: 30,
     fontWeight: "bold",
-    fontFamily: 'Cochin',
     padding: 10,
     paddingTop: 20
   },
   subText:{
     fontSize: 20,
-    fontFamily: 'Cochin',
-    padding: 10
+    paddingHorizontal: 10
   },
   questionText:{
     fontSize: 20,
     fontWeight: "bold",
-    fontFamily: 'Cochin',
     padding: 10,
     paddingTop: 60
   },

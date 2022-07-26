@@ -4,7 +4,6 @@ const transportType = [
   {id:3, name: 'Motor Bike', value:"motorbike", icon: "bicycle"},
   {id:4, name: 'Train', value:"train", icon: "train"},
   {id:5, name: 'Boat', value:"boat" ,icon: "boat"},
-  {id:6, name: 'Plane', value:"plane", icon: "airplane"},
 ]
 
 const fashionType = [
@@ -55,4 +54,12 @@ const purchaseType = [
 
 ]
 
-export {transportType, fashionType, foodType, streamingType, purchaseType};
+const mealType = [
+  {id:1, name: 'High Meat', value:"highMeat", icon: "fast-food"},
+  {id:2, name: 'Medium Meat', value:"mediumMeat",icon: "fast-food"},
+  {id:3, name: 'Low Meat', value:"lowMeat", icon: "fast-food"},
+  {id:4, name: 'Vegetarian', value:"vegetarian", icon: "ios-leaf-sharp"},
+  {id:5, name: 'Vegan', value:"vegan", icon: "nutrition-sharp"},
+]
+
+export {transportType, fashionType, foodType, streamingType, purchaseType, mealType};

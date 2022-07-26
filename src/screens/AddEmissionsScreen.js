@@ -48,6 +48,13 @@ function AddEmissionsScreen() {
             })} 
             iconName="cash"
           />
+          <ListItem 
+            title="Meal" 
+            onPress={()=> navigation.navigate('Select Sub Category', {
+              emissionType: 'mealType', iconName:"md-restaurant"
+            })} 
+            iconName="md-restaurant"
+          />
         </ScrollView>
       </View>
     </View>
