@@ -49,7 +49,20 @@ const OTPScreen = (props) => {
         // navigation.replace("budget");
       })
       .catch((err) => {
-        alert(err);
+        switch (err.code) {
+          case "auth/code-expired":
+            alert("Incorrect OTP !");
+            break;
+          case "auth/invalid-verification-code":
+            alert("Incorrect OTP !");
+            break;
+          case "auth/too-many-requests":
+            alert("Too many requests !");
+            break;
+          default:
+            alert("Something went wrong !");
+            break;
+        }
       });
   };
 

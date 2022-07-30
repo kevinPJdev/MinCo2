@@ -53,6 +53,24 @@ const LoginScreen = () => {
           case "auth/invalid-phone-number":
             alert("Invalid Phone Number !");
             break;
+          case "auth/missing-phone-number":
+            alert("Missing Phone Number !");
+            break;
+          case "auth/quota-exceeded":
+            alert("Quota Exceeded !");
+            break;
+          case "auth/user-disabled":
+            alert("User Disabled !");
+            break;
+          case "auth/operation-not-allowed":
+            alert("Something went Wrong please try Again !");
+            break;
+          case "auth/too-many-requests":
+            alert("Too many requests ! Please try again later");
+            break;
+          default:
+            alert("Something went wrong ! Please try again later");
+            break;
         }
       });
 

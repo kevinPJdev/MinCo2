@@ -102,7 +102,9 @@ function BudgetScreen() {
         </View>
 
         <View style={styles.buttonContainer}>
-
+        <TouchableOpacity onPress={handleSignOut} style={styles.button}>
+            <Text style={styles.buttonText}>Logout</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -146,7 +148,23 @@ const styles = StyleSheet.create({
     borderColor: Colors.green30,
     borderWidth: 2,
     marginBottom: 15
+  },
+  buttonContainer: {
+    elevation: 8,
+    backgroundColor: Colors.green30,
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    marginTop:10
+  },
+  buttonText: {
+    fontSize: 18,
+    color: Colors.white,
+    fontWeight: "bold",
+    alignSelf: "center",
+    textTransform: "uppercase"
   }
+
 });
 
 export default BudgetScreen;
