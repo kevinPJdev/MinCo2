@@ -29,7 +29,7 @@ You can open the project on multiple devices simultaneously. Go ahead and try it
 5. Emission Reductions Tips
 
 ## Screenshots
-<img src="https://user-images.githubusercontent.com/75366911/193490457-023f0d0d-1f51-4c8c-ba13-00f8bee0eb05.jpeg" width=300 height=600)
+<img src="https://user-images.githubusercontent.com/75366911/193490457-023f0d0d-1f51-4c8c-ba13-00f8bee0eb05.jpeg" width=300 height=600>
 
 
 
