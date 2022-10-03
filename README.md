@@ -29,10 +29,9 @@ You can open the project on multiple devices simultaneously. Go ahead and try it
 5. Emission Reductions Tips
 
 ## Screenshots
+![WhatsApp Image 2022-10-02 at 21 55 44](https://user-images.githubusercontent.com/75366911/193490457-023f0d0d-1f51-4c8c-ba13-00f8bee0eb05.jpeg)
 
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
-
-![WhatsApp Image 2022-10-02 at 21 55 44 (1)](https://user-images.githubusercontent.com/75366911/193489218-08e0f097-4c35-466d-bf4e-94ffb53275dd.jpeg | width=300)
+![WhatsApp Image 2022-10-02 at 21 55 44 (1)](https://user-images.githubusercontent.com/75366911/193489218-08e0f097-4c35-466d-bf4e-94ffb53275dd.jpeg)
 
 ![WhatsApp Image 2022-10-02 at 21 55 44 (2)](https://user-images.githubusercontent.com/75366911/193489236-c40f32ce-36f4-4fcf-9b0f-
 29928bb1fca2.jpeg)
