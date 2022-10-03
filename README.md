@@ -29,18 +29,19 @@ You can open the project on multiple devices simultaneously. Go ahead and try it
 5. Emission Reductions Tips
 
 ## Screenshots
-Dashboard:
+###Dashboard:
 <img src="https://user-images.githubusercontent.com/75366911/193490457-023f0d0d-1f51-4c8c-ba13-00f8bee0eb05.jpeg" width=300 height=600>
 
-oard:
+###Budget Screen:
 <img src="https://user-images.githubusercontent.com/75366911/193491512-13d4a154-dcfc-4e20-9cd6-0758c6e1620d.jpeg" width=300 height=600>
 
+###Emission Types:
 <img src="https://user-images.githubusercontent.com/75366911/193491643-ebda3c6a-cf12-4e87-812b-8cee7d9e0c99.jpeg" width=300 height=600>
 
+###Add Emission:
 <img src="https://user-images.githubusercontent.com/75366911/193491769-bb945bd9-659e-4fac-af41-2fd3ae366f8f.jpeg" width=300 height=600>
 
-<img src="https://user-images.githubusercontent.com/75366911/193491737-8a80c254-0f7c-4e8f-af44-683617916262.jpeg" width=300 height=600>
-
+###Learn Screen:
 <img src="https://user-images.githubusercontent.com/75366911/193491793-c087dce4-0a04-4d73-a3f8-faeb2933a4e0.jpeg" width=300 height=600>
 
 
