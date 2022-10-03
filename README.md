@@ -29,17 +29,8 @@ You can open the project on multiple devices simultaneously. Go ahead and try it
 5. Emission Reductions Tips
 
 ## Screenshots
-![WhatsApp Image 2022-10-02 at 21 55 44](https://user-images.githubusercontent.com/75366911/193490457-023f0d0d-1f51-4c8c-ba13-00f8bee0eb05.jpeg =250x250)
+<img src="https://user-images.githubusercontent.com/75366911/193490457-023f0d0d-1f51-4c8c-ba13-00f8bee0eb05.jpeg" width=300 height=600)
 
-![WhatsApp Image 2022-10-02 at 21 55 44 (1)](https://user-images.githubusercontent.com/75366911/193489218-08e0f097-4c35-466d-bf4e-94ffb53275dd.jpeg)
-
-![WhatsApp Im![WhatsApp Image 2022-10-02 at 21 55 44 (2)](https://user-images.githubusercontent.com/75366911/193490761-0ecad249-41aa-44ce-8f8b-c8bfcda0ff93.jpeg)
-
-![WhatsApp Image 2022-10-02 at 21 55 44 (3)](https://user-images.githubusercontent.com/75366911/193490657-ee05e51e-20a9-44a0-9b3b-43fded2108ce.jpeg)
-
-![WhatsApp Image 2022-10-02 at 21 55 44 (4)](https://user-images.githubusercontent.com/75366911/193489263-d74cdab4-1c2d-417c-9f07-3e37e0136d97.jpeg)
-
-![WhatsApp Image 2022-10-02 at 21 55 44 (5)](https://user-images.githubusercontent.com/75366911/193489301-f2e50953-d26a-418b-9c5c-5358a278e5f3.jpeg)
 
 
 
