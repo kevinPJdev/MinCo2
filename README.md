@@ -30,7 +30,7 @@ You can open the project on multiple devices simultaneously. Go ahead and try it
 
 ## Screenshots
 
-<img src="[https://github.com/favicon.ico](https://user-images.githubusercontent.com/75366911/193489215-4457499a-65e1-4ae2-b432-10cf9caeab1b.jpeg)" width="300">
+![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
 
 ![WhatsApp Image 2022-10-02 at 21 55 44 (1)](https://user-images.githubusercontent.com/75366911/193489218-08e0f097-4c35-466d-bf4e-94ffb53275dd.jpeg | width=300)
 
